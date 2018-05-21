@@ -1,28 +1,84 @@
 .App {
   text-align: center;
+height: 100vh;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+
+
+
+/* ====================Rooms List left=================== */
+
+.chat-rooms {
+  height: 100%;
+  background-color: lightslategray;
+  
+  border-right: solid 1px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+h1 {
+  font-size: 2em;
+  padding:3% 0 6% 0;
+  margin: 0 auto;
 }
 
-.App-title {
-  font-size: 1.5em;
+.room-form{
+  width: 80%;
+  margin: 0 auto; 
+  margin-bottom: 5%; 
+}
+#room-name{
+  margin-left: 5px;
+  width: 50%;
 }
 
-.App-intro {
-  font-size: large;
+#room-submit{
+  display: block;
+  margin: 0 auto;
+  margin-top: 3%;
+  
+}
+.rooms-list {
+  list-style: none;
+  padding: 10px;
+  width: 80%;
+  margin: 0 auto;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.rooms-list li {
+  padding: 5px;
+  text-align: center;
+
+}
+
+.rooms-list li:active, .rooms-list li:visited{
+  background-color: red;
+}
+
+/* ======================Message List right====================== */
+
+.messageList {
+  text-align: left;
+  flex-grow: 2
+}
+
+.message-content {
+  margin-bottom: 10px;
+ 
+}
+
+.message-username {
+
+}
+
+.timeStamp {
+ 
+
 }

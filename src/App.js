@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import * as firebase from 'firebase';
 import './App.css';
 import RoomList  from './components/RoomList'
-
- // Initialize Firebase
+import MessageList from './components/MessageList'
+ 
+// Initialize Firebase
  var config = {
   apiKey: "AIzaSyDX9m5ck6Opy7Zwk3PfWCnpZt5L7Z_bj-Y",
   authDomain: "bloc-chat-react-melissa.firebaseapp.com",
@@ -15,11 +16,42 @@ import RoomList  from './components/RoomList'
 firebase.initializeApp(config);
 
 class App extends Component {
+
+  constructor(props){
+    super(props);
+
+    this.state = {
+      activeRoom:{},
+    }
+
+    this.activeRoom =this.activeRoom.bind(this);
+  }
+    activeRoom(room){
+  
+      this.setState({ activeRoom: room });
+    }
+  
+    
+  
+
+  
   render() {
     return (
       <div className="App">
-       <RoomList firebase={firebase} />
-      </div>
+        <section className="rooms">
+          <RoomList
+            firebase={firebase}
+            activeRoom= {this.activeRoom} 
+            
+          />
+        </section>
+        <section className="messageList">
+      <MessageList
+        firebase= { firebase }
+        activeRoom= { this.state.activeRoom }
+        />
+      </section>
+    </div>
     );
   }
 }

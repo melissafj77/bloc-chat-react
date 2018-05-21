@@ -31,34 +31,43 @@ class RoomList extends Component {
     this.setState({newRoomName: e.target.value});
   }
 
-  createRoom(newRoomName){
+  createRoom(newRoomName) {
+    if (this.state.newRoomName === ''){
+      alert('Please name the room');
+    } else {
     this.roomsRef.push({
       name: newRoomName
     });
+    this.setState({ newRoomName:''});
+    }
   }
 
   render() {
     return (
-      <div>
-        {this.state.rooms.map((room, key) => (
-          <div key={room.key}>
-            <h1>{room.name}</h1>
-          </div>
-        ))}
-        <form onSubmit={ e => this.handleSubmit(e)}>
+      <section className='chat-rooms'>
+        <h1>Bloc Chat</h1>
+        <form className="room-form"onSubmit={ e => this.handleSubmit(e)}>
           <label htmlFor="room-name">New Room</label>
           <input
+            
             type="text"
             name="name"
             id="room-name"
             value={this.state.newRoomName}
             onChange={e =>this.handleChange(e)}
           />
-          <input type="submit" value="submit"/>
+          <input id="room-submit" type="submit" value="submit"/>
         </form>
-      </div>
+        <ul className='rooms-list'>{ 
+      this.state.rooms.map( (room, index) =>(
+        <li key={room.key} onClick={ (e) => this.props.activeRoom(room)}>{room.name}</li>
+      )
+    )}
+        </ul>
+      </section>
     );
   }
 }
+      
 
 export default RoomList;
