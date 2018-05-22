@@ -31,10 +31,15 @@ class RoomList extends Component {
     this.setState({newRoomName: e.target.value});
   }
 
-  createRoom(newRoomName){
+  createRoom(newRoomName) {
+    if (this.state.newRoomName === ''){
+      alert('Please name the room');
+    } else {
     this.roomsRef.push({
       name: newRoomName
     });
+    this.setState({ newRoomName:''});
+    }
   }
 
   render() {
