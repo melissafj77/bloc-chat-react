@@ -45,7 +45,6 @@ class RoomList extends Component {
   render() {
     return (
       <section className='chat-rooms'>
-        <h1>Bloc Chat</h1>
         <form className="room-form"onSubmit={ e => this.handleSubmit(e)}>
           <label htmlFor="room-name">New Room</label>
           <input

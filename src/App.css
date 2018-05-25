@@ -14,9 +14,9 @@ height: 100vh;
 
 
 
-/* ====================Rooms List left=================== */
+/* ====================Rooms List/user left=================== */
 
-.chat-rooms {
+.side {
   height: 100%;
   background-color: lightslategray;
   
@@ -26,7 +26,26 @@ height: 100vh;
 h1 {
   font-size: 2em;
   padding:3% 0 6% 0;
-  margin: 0 auto;
+  margin: 5% 0;
+  text-align: center;
+
+}
+
+.user{
+margin-bottom: 10%;
+}
+
+.user-name{
+  margin-bottom: 5%;
+}
+
+.user button{
+  margin: 0 4%;
+}
+.user button, #room-submit{
+  padding: 1%;
+  border-radius: 5%;
+  text-align: center;
 }
 
 .room-form{
@@ -42,7 +61,7 @@ h1 {
 #room-submit{
   display: block;
   margin: 0 auto;
-  margin-top: 3%;
+  margin-top: 5%;
   
 }
 .rooms-list {
@@ -54,7 +73,7 @@ h1 {
 
 .rooms-list li {
   padding: 5px;
-  text-align: center;
+  text-align: left;
 
 }
 
@@ -66,19 +85,35 @@ h1 {
 
 .messageList {
   text-align: left;
-  flex-grow: 2
+  flex-grow: 2;
+  margin-top: 4%;
 }
 
+.current-room{
+  margin-left: 4%;
+}
+.messages-container{
+  margin: 6% 0 0 0;
+}
 .message-content {
   margin-bottom: 10px;
  
 }
 
+.message-data{
+  clear: both;
+  padding: 4%;
+}
+
+.message:nth-child(odd){
+  background-color: #eee;
+}
 .message-username {
 
 }
 
 .timeStamp {
  
+ float: right;
 
 }
