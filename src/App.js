@@ -68,6 +68,7 @@ class App extends Component {
       <MessageList
         firebase= { firebase }
         activeRoom= { this.state.activeRoom }
+        activeUser = {this.state.activeUser}
         />
       </section>
     </div>
