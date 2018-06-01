@@ -1,14 +1,13 @@
 .App {
   text-align: center;
-height: 100vh;
-
+width: 100%;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  
   -webkit-flex-flow: row wrap;
+  position: absolute;
 }
 
 
@@ -17,32 +16,32 @@ height: 100vh;
 /* ====================Rooms List/user left=================== */
 
 .side {
-  height: 100%;
+
   background-color: lightslategray;
-  
+ 
   border-right: solid 1px;
 }
 
 h1 {
   font-size: 2em;
   padding:3% 0 6% 0;
-  margin: 5% 0;
+  margin: 5% 0 10% 0;
   text-align: center;
 
 }
 
 .user{
-margin-bottom: 10%;
+margin-bottom: 22%;
 }
 
 .user-name{
-  margin-bottom: 5%;
+  margin-bottom: 8%;
 }
 
 .user button{
   margin: 0 4%;
 }
-.user button, #room-submit{
+.user button, #room-submit, #message-submit{
   padding: 1%;
   border-radius: 5%;
   text-align: center;
@@ -51,11 +50,16 @@ margin-bottom: 10%;
 .room-form{
   width: 80%;
   margin: 0 auto; 
-  margin-bottom: 5%; 
+  margin-bottom: 4%; 
 }
 #room-name{
   margin-left: 5px;
   width: 50%;
+  outline: none;
+}
+
+#room-name:focus{
+  border: 3px solid #ccc;
 }
 
 #room-submit{
@@ -66,14 +70,15 @@ margin-bottom: 10%;
 }
 .rooms-list {
   list-style: none;
-  padding: 10px;
+  padding: 10%;
   width: 80%;
   margin: 0 auto;
 }
 
 .rooms-list li {
-  padding: 5px;
+  padding: 10%;
   text-align: left;
+  font-size: 1.2em;
 
 }
 
@@ -87,6 +92,7 @@ margin-bottom: 10%;
   text-align: left;
   flex-grow: 2;
   margin-top: 4%;
+  height: 100%;
 }
 
 .current-room{
@@ -95,13 +101,24 @@ margin-bottom: 10%;
 .messages-container{
   margin: 6% 0 0 0;
 }
+
 .message-content {
   margin-bottom: 10px;
- 
+  width: 75%;
+ float: left;
 }
 
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
 .message-data{
-  clear: both;
+  
   padding: 4%;
 }
 
@@ -116,4 +133,38 @@ margin-bottom: 10%;
  
  float: right;
 
+}
+
+.new-message{
+  width: 100%;
+  position:static;
+  bottom: 0;
+}
+.message-form{
+  width: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: flex;
+    webkit-flex-flow: row nowrap;
+  position:static;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+}
+
+#message-text{
+  height: 60px;
+  width: 100%;
+  outline: none;
+  overflow: auto;
+  resize: none;
+}
+#message-text:focus{
+  border: 3px solid #aaa;
+}
+#message-submit{
+  background-color: #222;
+  color: antiquewhite;
 }

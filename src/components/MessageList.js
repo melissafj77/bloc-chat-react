@@ -58,15 +58,15 @@ class MessageList extends Component{
             
             <h2 className="current-room">Room: {this.props.activeRoom.name}</h2>
             
-            <section className="messages-container">
+            <section className="messages-container cf">
               { this.state.messages.filter( (message)=> message.roomId === this.props.activeRoom.name ).map(
                 (message, index) =>
-                <section className="message-data"key={index}>
+                <section className="message-data cf "key={index}>
                   <h4 id="userName">{message.username}</h4>
-                  <div className="timeStamp">
-                    <span>{message.sentAt}</span>
-                  </div>
-                <p className="message-content">{message.content}</p>
+                  
+                    <span className="timeStamp">{message.sentAt}</span>
+                  
+                <div className="message-content">{message.content}</div>
                 </section>
                 
               )}
@@ -79,6 +79,7 @@ class MessageList extends Component{
                   placeholder="Type your message here"
                   name="message"
                   id="message-text"
+                  wrap="off"
                   value={this.state.newContent}
                   onChange={e =>this.handleChange(e)}
                 />
